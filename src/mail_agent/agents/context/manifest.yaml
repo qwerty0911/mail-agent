@@ -1,0 +1,12 @@
+name: context
+team: mail
+description: 스레드의 이전 교신을 수집·요약하여 ContextPack 생성
+order: 20
+requires: [classification]
+produces: [context]
+when: "classification.label == 'reply_needed'"
+model_tier: light
+capabilities: [gmail.read]
+risk_tier: low
+limits: {max_steps: 2, max_tokens: 3000, timeout_s: 30}
+eval: {dataset: context-v1, evaluators: [coverage, faithfulness]}

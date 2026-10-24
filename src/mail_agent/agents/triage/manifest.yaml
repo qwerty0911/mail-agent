@@ -1,0 +1,11 @@
+name: triage
+team: mail
+description: 메일을 reply_needed / fyi / newsletter / spam / auto 로 분류하고 신뢰도와 사유를 반환
+order: 10
+requires: [mail]
+produces: [classification]
+model_tier: light
+capabilities: []
+risk_tier: low
+limits: {max_steps: 1, max_tokens: 2000, timeout_s: 30}
+eval: {dataset: triage-v2, evaluators: [recall, precision, calibration]}

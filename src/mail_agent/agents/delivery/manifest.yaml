@@ -1,0 +1,12 @@
+name: delivery
+team: mail
+description: Gmail 초안함에 저장하고 사용자 알림 카드를 생성 (결정적, LLM 미사용)
+order: 50
+requires: [review]
+produces: [receipt]
+when: "review.passed == 'True'"
+model_tier: none
+capabilities: [gmail.draft.create, gmail.draft.delete, notify]
+risk_tier: medium
+limits: {max_steps: 2, max_tokens: 0, timeout_s: 30}
+eval: {dataset: delivery-v1, evaluators: [idempotency]}

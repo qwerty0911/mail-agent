@@ -1,0 +1,11 @@
+# ~/.hermes/config.yaml 의 mcp_servers 항목에 병합할 예시 (4단계 MCP 서버 구현 후 활성화)
+# 변경 후 Hermes 재시작 또는 세션에서 /reload-mcp
+mcp_servers:
+  mail_agent:
+    command: "uv"
+    args: ["run", "--project", "/Users/bkk/프로젝트/mail_agent", "python", "-m", "mail_agent.mcp_server"]
+    # 시크릿은 여기 쓰지 않는다 — mail-agent 프로세스가 프로젝트 .env 를 직접 읽음
+    tools:
+      include: [triage_inbox, list_pending, get_draft, approve_draft, revise_draft, discard_draft, resolve_classification]
+      prompts: false
+      resources: false

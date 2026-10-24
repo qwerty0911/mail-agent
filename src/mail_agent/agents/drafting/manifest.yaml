@@ -1,0 +1,11 @@
+name: drafting
+team: mail
+description: 컨텍스트와 페르소나를 바탕으로 회신 초안을 작성·수정 (원문 언어 매칭)
+order: 30
+requires: [classification, context]
+produces: [draft]
+model_tier: standard
+capabilities: []
+risk_tier: low
+limits: {max_steps: 3, max_tokens: 4000, timeout_s: 60}
+eval: {dataset: drafting-v1, evaluators: [tone, hallucination, language_match]}

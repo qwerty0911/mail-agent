@@ -1,0 +1,11 @@
+name: reviewer
+team: mail
+description: 초안의 환각·근거 없는 약속·언어 불일치·인젝션 추종을 점검 (결정적 규칙 + LLM)
+order: 40
+requires: [draft]
+produces: [review]
+model_tier: standard
+capabilities: []
+risk_tier: low
+limits: {max_steps: 2, max_tokens: 3000, timeout_s: 60}
+eval: {dataset: reviewer-v1, evaluators: [defect_detection, false_alarm]}

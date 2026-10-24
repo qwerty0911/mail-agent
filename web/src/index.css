@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --surface-2: #f1f3f6; --border: #e3e6eb;
+  --text: #14171c; --muted: #636b78; --accent: #2457d6; --accent-soft: #e6edfc;
+  --ok: #17803d; --ok-soft: #e3f4e8; --warn: #a15c00; --warn-soft: #fdf0d9;
+  --bad: #b42318; --bad-soft: #fde8e6; --sup: #6d3fd1; --sup-soft: #efe8fb;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1216; --surface: #171b21; --surface-2: #1e232b; --border: #2a303a;
+    --text: #e8ebf0; --muted: #98a1af; --accent: #7aa2ff; --accent-soft: #1b2744;
+    --ok: #5fd08a; --ok-soft: #13291d; --warn: #f0b95a; --warn-soft: #2e2412;
+    --bad: #ff8a80; --bad-soft: #321716; --sup: #b79bff; --sup-soft: #271c42;
+  }
+}
+@theme inline {
+  --color-bg: var(--bg); --color-surface: var(--surface); --color-surface2: var(--surface-2);
+  --color-line: var(--border); --color-ink: var(--text); --color-muted: var(--muted);
+  --color-accent: var(--accent); --color-accentsoft: var(--accent-soft);
+  --color-ok: var(--ok); --color-oksoft: var(--ok-soft);
+  --color-warn: var(--warn); --color-warnsoft: var(--warn-soft);
+  --color-bad: var(--bad); --color-badsoft: var(--bad-soft);
+  --color-sup: var(--sup); --color-supsoft: var(--sup-soft);
+  --font-sans: "Pretendard", -apple-system, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+html, body, #root { height: 100%; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-sans); font-size: 14px; }

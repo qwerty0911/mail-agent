@@ -1,0 +1,20 @@
+# secrets — 절대 커밋 금지
+.env
+.env.*
+!.env.example
+.secrets/
+*.pem
+*token*.json
+client_secret*.json
+credentials.json
+
+# python / node
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+node_modules/
+web/dist/
+*.sqlite
+*.db
